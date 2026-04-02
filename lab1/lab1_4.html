@@ -25,7 +25,7 @@
 			альтернативный текст, если они не поддерживают изображения, или сконфигурированы так, чтобы не показывать
 			изображения (отключен показ изображений).</p>
 		<p><b>Задание 2.</b> Вставьте на страницу изображение с ошибочной ссылкой <code>slonn.png</code></p>
-
+		<img src="images/slonn.png" alt="Фото слона (файл не найден)">
 		<h2>Размеры изображения</h2>
 		<p>Атрибуты <code>width</code> и <code>height</code> задают размеры области изображения. Если оба атрибута не
 			заданы, размер изображения будет определен после его полной загрузки, после чего размеры области будут
@@ -35,6 +35,7 @@
 			При указании обоих атрибутов браузер «впишет» изображение в область с указанными размерами.</p>
 		<p><b>Задание 3.</b>Вставьте на страницу изображение <code>redcat.jpg</code> с указанием его ширины и высоты.
 		</p>
+		<img src="images/redcat.jpg" width="280" height="200">
 		<p>Для добавления гибких (responsive) изображений (таких, которые отображаются хорошо на устройствах с сильно
 			отличающимися размерами экрана, разрешением, и другими
 			характеристиками) используют атрибуты <code>sizes</code> и <code>srcset</code>.
@@ -51,7 +52,13 @@
 			<li>для экранов с шириной от 768px до 992px и DPR=2 используйте <code>mushroom_retina.jpg</code>;</li>
 			<li>во всех остальных случаях используйте <code>mushroom.jpg</code>.</li>
 		</ul>
-
+		<img src="images/mushroom.jpg"
+        	srcset="
+        		images/mushroom_portrait.jpg 575w,
+          		images/mushroom_landscape.jpg 768w,
+          		images/mushroom_retina.jpg 992w 2x
+        	"
+        sizes="(max-width: 575px) 100vw, (max-width: 768px) 60vw, (max-width: 992px) 40vw, 30vw">
 		<h2>Подпись к изображению</h2>
 		<p>Для группирования любых элементов, например, изображений и подписей к ним используется элемент
 			<code>figure</code>.
@@ -63,7 +70,10 @@
 			или последним элементом в группе.
 		</p>
 		<p><b>Задание 5.</b> Вставьте на страницу изображение <code>globus.gif</code> с подписью к нему.</p>
-
+		<figure>
+      		<img src="images/globus.gif">
+      		<figcaption>Анимированный глобус</figcaption>
+    	</figure>
 		<h2>Элемент picture</h2>
 		<p>
 			HTML-элемент <code>picture</code> служит контейнером для одного или более элементов
@@ -75,7 +85,10 @@
 		</p>
 		<p><b>Задание 6.</b> Вставьте на страницу изображение <code>html5-logo</code> в растровом (<code>png</code>) или
 			векторном (<code>svg</code>) формате в зависимости от поддержки браузером этих форматов.</p>
-
+		<picture>
+        	<source srcset="images/html5-logo.svg" type="image/svg+xml">
+        	<img src="images/html5-logo.png" alt="Логотип HTML5">
+      	</picture>
 		<h2>Оптимизация изображений</h2>
 		<p>Для оптимизации скорости загрузки рекомендуется использовать современные форматы изображений
 			WebP и AVIF (высокое сжатие, поддержка прозрачности) для фото и графики, SVG для иконок и логотипов
@@ -88,6 +101,14 @@
 			преобразуйте <code>light.gif</code> c помощью сервиса <a
 				href="https://cloudinary.com/tools/gif-to-avif">Cloudinary</a> в формат <code>AVIF</code> и добавьте на
 			страницу.</p>
+		<picture>
+        	<source srcset="images/muscle.webp" type="image/webp">
+        	<img src="images/muscle.png" alt="Мышца">
+      	</picture>
+		<picture>
+        	<source srcset="images/light.avif" type="image/avif">
+        	<img src="images/light.gif" alt="Мигающий свет">
+      	</picture>
 	</main>
 </body>
 
