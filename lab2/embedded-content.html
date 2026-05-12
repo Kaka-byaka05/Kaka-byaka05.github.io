@@ -50,11 +50,12 @@
  -->
 
 	<h2>Демонстрация добавления на страницу аудио</h2>
-	<!-- 
- 1. Скачайте аудиофайлы https://fedyaevys.ru/html&css/lab2/yuriy-gagarin-poehali.mp3 и https://fedyaevys.ru/html&css/lab2/yuriy-gagarin-poehali.ogg
- 2. С помощью элемента audio добавьте на страницу  аудиоплеер с элементами управления, который воспроизводит скачанные аудио
- 3. Используйте тег <source> для добавления нескольких форматов одного и того же файла на случай, если какой-то из них не будет поддерживаться браузером
-  -->
+	<audio controls>
+    		<source src="yuriy-gagarin-poehali.mp3" type="audio/mpeg">
+            <source src="yuriy-gagarin-poehali.ogg" type="audio/ogg">
+		    Ваш браузер не поддерживает аудиоэлемент HTML5.
+            Попробуйте <a href="yuriy-gagarin-poehali.mp3" download>скачать аудиофайл</a>.
+    </audio>
 
 	<h2>Демонстрация добавления PDF на страницу</h2>
 	<!-- 
