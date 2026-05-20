@@ -1,128 +1,83 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-		<meta charset="UTF-8">
-		<title>Оформление вертикального меню</title>
-		<style>
-			html {
-					background: #f0f0f0;
-			}
-			
-			.menu {
-					width: 200px;
-					background: #fff;
-			}
-			
-			.menu ul {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
+    <meta charset="UTF-8">
+    <title>Оформление вертикального меню</title>
+    <style>
+        html {
+            background: #f0f0f0;
+        }
 
-    .menu li {
-      position: relative;
-      padding-left: 25px; /* Отступ для размещения маркера */
-    }
+        .menu {
+            width: 200px;
+            background: #fff;
+        }
 
-    /* Маркер главного списка (минус по умолчанию) */
-    .menu > ul > li > label::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      background-image: url('minus.gif');
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+        .menu ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
 
-    /* Подсписки скрыты по умолчанию */
-    .menu li ul {
-      display: none;
-      list-style: none;
-      padding-left: 25px;
-    }
+        .menu li a {
+        }
 
-    /* Маркер подсписка (точка) */
-    .menu li ul li::before {
-      content: "";
-      position: absolute;
-      left: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
-      background-image: url('point.gif');
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
+        .menu li a:hover {
+        }
 
-    /* Логика раскрытия: при чекнутом чекбоксе показываем подсписок */
-    .menu li input:checked + label + ul {
-      display: block;
-    }
+        .menu li ul {
+            margin-left: 20px;
+        }
 
-    /* Меняем иконку на "плюс" при раскрытии (через чекбокс) */
-    .menu li input:checked + label::before {
-      background-image: url('plus.gif') !important;
-    }
+        .menu > ul > li > a {
+            background-image: url('minus.gif');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+            padding-left: 30px;
+        }
 
-    /* Скрываем чекбоксы (они только для логики) */
-    .menu li input {
-      position: absolute;
-      opacity: 0;
-      cursor: pointer;
-    }
-
-    .menu li a {
-      text-decoration: none;
-      color: #333;
-      display: block;
-      padding: 8px 0;
-    }
-
-    .menu li a:hover {
-      color: #007bff;
-    }
-	</style>
+        .menu li li a {
+            background-image: url('ppoint.gif');
+            background-repeat: no-repeat;
+            background-position: left 10px center;
+            padding-left: 28px;
+        }
+    </style>
 </head>
 <body>
-	<nav class="menu">
-		<ul>
-			<li><a href="#">Фильмы</a>
-				<ul>
-					<li><a href="#">Экшн</a></li>
-					<li><a href="#">Мелодрамы</a></li>
-					<li><a href="#">Сериалы</a></li>
-					<li><a href="#">Семейные</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Музыка</a>
-				<ul>
-					<li><a href="#">Классика</a></li>
-					<li><a href="#">Джаз</a></li>
-					<li><a href="#">Рок</a></li>
-					<li><a href="#">Грандж</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Софт</a>
-				<ul>
-					<li><a href="#">Графика</a></li>
-					<li><a href="#">3D-моделирование</a></li>
-					<li><a href="#">Машинопись</a></li>
-					<li><a href="#">Переводчики</a></li>
-				</ul>
-			</li>
-			<li><a href="#">Игры</a>
-				<ul>
-					<li><a href="#">РПГ</a></li>
-					<li><a href="#">Шутеры</a></li>
-					<li><a href="#">Пасьянсы</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
+    <nav class="menu">
+        <ul>
+            <li><a href="#">Фильмы</a>
+                <ul>
+                    <li><a href="#">Экшн</a></li>
+                    <li><a href="#">Мелодрамы</a></li>
+                    <li><a href="#">Сериалы</a></li>
+                    <li><a href="#">Семейные</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Музыка</a>
+                <ul>
+                    <li><a href="#">Классика</a></li>
+                    <li><a href="#">Джаз</a></li>
+                    <li><a href="#">Рок</a></li>
+                    <li><a href="#">Грандж</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Софт</a>
+                <ul>
+                    <li><a href="#">Графика</a></li>
+                    <li><a href="#">3D-моделирование</a></li>
+                    <li><a href="#">Машинопись</a></li>
+                    <li><a href="#">Переводчики</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Игры</a>
+                <ul>
+                    <li><a href="#">РПГ</a></li>
+                    <li><a href="#">Шутеры</a></li>
+                    <li><a href="#">Пасьянсы</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
 </body>
-</html>
