@@ -7,51 +7,49 @@
         html {
             background: #f0f0f0;
         }
-
+        
         .menu {
             width: 200px;
             background: #fff;
+        }
+        
+        .menu ul {
+        }
+        
+        .menu li {
+        }
+        
+        .menu li a {
+        }
+        
+        .menu li a:hover {
+        }
+        
+        .menu li ul {
+        }
+        
+        .menu li li {
         }
         .menu ul {
             margin: 0;
             padding: 0;
             list-style: none;
         }
-        .menu li a {
+        .menu li {
             position: relative;
         }
-        .menu li a:hover {
-        }
         .menu li ul {
-            margin-left: 20px;
-        }
-        .menu > ul > li > a::before {
-            content: "";
+            display: none;
             position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            background: url('css_sprites.png') no-repeat;
-            background-position: -10px -10px;
+            left: 100%;
+            top: 0;
+            width: 150px;
+            background: #fff;
+            border: 1px solid #ccc;
         }
-        .menu li li a::before {
-            content: "";
-            position: absolute;
-            left: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            background: url('css_sprites.png') no-repeat;
-            background-position: -82px -10px;
-        }
-        .menu > ul > li > a {
-            padding-left: 30px;
-        }
-        .menu li li a {
-            padding-left: 28px;
+
+        .menu li:hover > ul {
+            display: block;
         }
     </style>
 </head>
