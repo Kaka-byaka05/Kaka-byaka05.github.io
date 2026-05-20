@@ -12,35 +12,45 @@
             width: 200px;
             background: #fff;
         }
-
         .menu ul {
             margin: 0;
             padding: 0;
             list-style: none;
         }
-
         .menu li a {
             position: relative;
         }
-
         .menu li a:hover {
         }
-
         .menu li ul {
             margin-left: 20px;
         }
-
+        .menu > ul > li > a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: url('pic/css_sprites.png') no-repeat;
+            background-position: -10px -10px;
+        }
+        .menu li li a::before {
+            content: "";
+            position: absolute;
+            left: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: url('pic/css_sprites.png') no-repeat;
+            background-position: -82px -10px;
+        }
         .menu > ul > li > a {
-            background-image: url('minus.gif');
-            background-repeat: no-repeat;
-            background-position: left 10px center;
             padding-left: 30px;
         }
-
         .menu li li a {
-            background-image: url('point.gif');
-            background-repeat: no-repeat;
-            background-position: left 10px center;
             padding-left: 28px;
         }
     </style>
@@ -82,3 +92,4 @@
         </ul>
     </nav>
 </body>
+</html>
