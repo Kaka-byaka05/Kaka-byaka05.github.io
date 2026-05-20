@@ -24,8 +24,12 @@
         .menu li:hover ul {
             display: block;
         }
-    
-        /* При наведении на пункт с подменю: скрываем «плюс», показываем «минус» */
+        li > a > .fa-square-plus {
+            display: block;
+        }
+        li > a > .fa-square-minus {
+            display: none;
+        }
         li:has(ul) > a:hover > .fa-square-plus {
           display: none;
         }
