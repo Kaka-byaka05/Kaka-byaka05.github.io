@@ -14,63 +14,78 @@
 			}
 			
 			.menu ul {
-				list-style: none;
-  				margin: 0;
-   				padding: 0;	
-			}
-			
-			.menu li {
-				position: relative;	
-			}
-			
-			.menu li a {
-				display: block;
-   				padding: 10px 15px;
-   				text-decoration: none;
-   				color: #333;
-   				border-bottom: 1px solid #eeeeee;	
-			}
-			
-			.menu li a:hover {
-				background: #ffffcc;	
-			}
-			
-			.menu li ul {
-				display: none;
-   				position: absolute;
-				left: 100%;
-				top: 0;
-				width: 200px;
-				background: #fff;
-				border: 1px solid #ccc;	
-			}
-			
-			.menu li li {
-					
-			}
-			.menu li:hover > ul {
-		   		display: block;
-		  	}
-		
-		  	.menu li ul li a::before {
-		   		content: "\f192";
-		   		font-family: "Font Awesome 6 Free";
-		   		font-weight: 900;
-		   		margin-right: 10px;
-		   		color: #000000;
-		  	}
-		
-		  	.menu > ul > li > a::before {
-		   		content: "\f0fe";
-		   		font-family: "Font Awesome 6 Free";
-		   		font-weight: 900;
-		   		margin-right: 10px;
-		   		color: #000000;
-		  	}
-		
-		  	.menu > ul > li:hover > a::before {
-		   		content: "\f146";
-		  	}
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .menu li {
+      position: relative;
+      padding-left: 25px; /* Отступ для размещения маркера */
+    }
+
+    /* Маркер главного списка (минус по умолчанию) */
+    .menu > ul > li > label::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-image: url('minus.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    /* Подсписки скрыты по умолчанию */
+    .menu li ul {
+      display: none;
+      list-style: none;
+      padding-left: 25px;
+    }
+
+    /* Маркер подсписка (точка) */
+    .menu li ul li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      background-image: url('point.gif');
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    /* Логика раскрытия: при чекнутом чекбоксе показываем подсписок */
+    .menu li input:checked + label + ul {
+      display: block;
+    }
+
+    /* Меняем иконку на "плюс" при раскрытии (через чекбокс) */
+    .menu li input:checked + label::before {
+      background-image: url('plus.gif') !important;
+    }
+
+    /* Скрываем чекбоксы (они только для логики) */
+    .menu li input {
+      position: absolute;
+      opacity: 0;
+      cursor: pointer;
+    }
+
+    .menu li a {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      padding: 8px 0;
+    }
+
+    .menu li a:hover {
+      color: #007bff;
+    }
 	</style>
 </head>
 <body>
